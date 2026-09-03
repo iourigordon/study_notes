@@ -1,0 +1,284 @@
+\documentclass[twoside]{article}
+\usepackage[cm]{fullpage}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\begin{document}
+\section{Derivatives}
+\textbf{Definition of Derivative}
+$f'(x) = \lim_{\Delta x \to \infty} \frac{f(x_0 + \Delta x) - f(x_0))}{\Delta x}$ \newline
+\textbf{Continious Function Definition} \newline
+\indent $f$ is continious at $x_0$ means $\lim_{x \to x_0} f(x) = f(x_0)$ \newline
+\indent Continious at $x_0$ means\newline
+\indent \indent $\lim_{x \to x_o} f(x)$ exists from Left and Right, and is the same\newline
+\indent \indent $f(x_0)$ is defined\newline
+\noindent 
+\textbf{Product Rule} $(uv)' = u'v + v'u$;\indent \textbf{Quotient Rule} $(\frac{u}{v})' = \frac{u'v - v'u}{v^2}$ \newline
+\textbf{Chain Rule} $(f \circ g)' = (f' \circ g) \cdot g'$;\indent $\frac{\mathrm{d}z}{\mathrm{d}x} = \frac{\mathrm{d}z}{\mathrm{d}y} \cdot \frac{\mathrm{d}y}{\mathrm{d}x}$ \newline
+\textbf{Derivatives of Powers} $f(x)=x^r => f'(x)=rx^{r-1} $ \newline
+\textbf{Derivatives of Exponential and Logarithmic Functions} \newline
+\indent $\frac{\mathrm{d}}{\mathrm{d}x}e^x = e^x$;\indent $\frac{\mathrm{d}}{\mathrm{d}x}a^x = ln(a) \cdot a^x$;\indent $\frac{\mathrm{d}}{\mathrm{d}x}ln(x) = \frac{1}{x}$; 
+\indent $\frac{\mathrm{d}}{\mathrm{d}x}log_a(x) = \frac{1}{xln(a)}$; \newline
+\textbf{Derivatives of Trigonometric Functions} \newline
+\indent $\frac{\mathrm{d}}{\mathrm{d}x}\sin(x)=\cos(x)$; $\frac{\mathrm{d}}{\mathrm{d}x}\cos(x)=-\sin(x)$; $\frac{\mathrm{d}}{\mathrm{d}x}\tan(x)=\sec^2(x)=\frac{1}{\cos^2(x)}=1+\tan^2(x)$; $\frac{\mathrm{d}}{\mathrm{d}x}\sec(x)=\sec(x)\tan(x)$\newline
+\textbf{Derivatives of Inverse Trigonometric Functions} \newline
+\indent $\frac{\mathrm{d}}{\mathrm{d}x}\arcsin(x)=\frac{1}{\sqrt{1-x^2}}, -1<x<1$; 
+\indent $\frac{\mathrm{d}}{\mathrm{d}x}\arccos(x)=-\frac{1}{\sqrt{1-x^2}}, -1<x<1$; 
+\indent $\frac{\mathrm{d}}{\mathrm{d}x}\arctan(x)=\frac{1}{1+x^2}$;\newline
+\textbf{Linear Approximation}\newline
+\indent $f(x) = f(x_0)+f'(x_0)(x-x_0)$\newline
+\textbf{Quadratic Approximation}\newline
+\indent $f(x) = f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2$\newline
+\textbf{Sketching}\newline
+\indent Plot discontinuities (especially infinite)\newline
+\indent \indent End points ($x \to \pm \infty$)\newline
+\indent \indent Easy points (optional)\newline
+\indent \indent Solve for $f'(x)=0$\newline
+\indent \indent Plot critical points and values\newline
+\indent Deside wether $f'(x)>0$ or $f'(x)<0$ on each interval between critical points/discontinuities. Check with the above\newline
+\indent \indent Solve $f''(x)>0$ for concave up\newline
+\indent \indent Solve $f''(x)<0$ for concave up\newline
+\indent \indent Solve $f''(x)=0$ for inflection point\newline
+\indent Combine all of the above\newline
+\textbf{Newton's Method}: $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$;\newline
+\textbf{Mean Value Theorem}: $\frac{f(b)-f(a)}{b-a}=f'(c)$, \newline
+\indent for some $c \in (a<c<b)$ provided f is differentiable in $c \in (a<x<b)$ and contimuous in $c \in (a \leq c \leq b)$
+\section{Integrals}
+\textbf{First Fundamental Theorem of Calculus (FTC1)}:
+\indent if $F'=f$, then $\int\limits_a^bf(x) \mathrm d x = F(b)-F(a)$\newline
+\textbf{Second Fundamental Theorem of Calculus (FTC2)}:
+\indent $\frac{\mathrm{d}}{\mathrm{d}x} \int\limits_{g(x)}^{h(x)}f(t)\mathrm{d}t = f(h(x)) \cdot h'(x) - f(g(x)) \cdot g'(x)$ \newline
+\textbf{Properties Of Integrals}:\newline
+\indent $\int\limits_a^b (f(x)+g(x))\mathrm{d}x = \int\limits_a^bf(x)\mathrm d x + \int\limits_a^bg(x)\mathrm{d}x$\newline
+\indent $\int\limits_a^bcf(x)\mathrm{d}x = c\int\limits_a^bf(x)\mathrm{d}x$\newline
+\indent $\int\limits_a^bf(x)\mathrm{d}x + \int\limits_b^cf(x)\mathrm{d}x = \int\limits_a^cf(x)\mathrm{d}x$; $a<b<c$\newline
+\indent $\int\limits_a^af(x)\mathrm{d}x = 0 (= F(a)-F(a))$\newline
+\indent $\int\limits_a^bf(x)\mathrm{d}x = -\int\limits_b^af(x0\mathrm{d}x; F(b)-F(a) = -(F(a)-F(b))$\newline
+\indent if $f(x) \leq g(x) \Rightarrow \int\limits_a^bf(x)\mathrm{d}x \leq \int\limits_a^bg(x)\mathrm{d}x$\newline
+\textbf{Trigonometric Formulas}:\newline\newline
+\indent $\sin^2\theta + \cos^2\theta=1$; $\cos2\theta=\cos^2\theta-\sin^2\theta$; $\sin2\theta=2\sin\theta\cos\theta$; $\cos^2\theta=\frac{1+\cos2\theta}{2}$; $\sin^2\theta=\frac{1-cos2\theta}{2}$\newline\newline
+\indent $\sec(x)=\frac{1}{\cos(x)}$; $\csc(x)=\frac{1}{\sin(x)}$\newline\newline
+\textbf{Integration Formulas}:\newline\newline
+\indent $\int\frac{1}{x}\mathrm{d}x = ln|x|+C$; $\int{k}\mathrm{d}x=kx+C$; $\int{x^a}\mathrm{d}x=\frac{x^{a+1}}{a+1}+C$; $\int(ax+b)^n\mathrm{d}x=\frac{(ax+b)^{n+1}}{a(n+1)}+C$; $\int\frac{c}{ax+b}\mathrm{d}x=\frac{c}{a} ln|ax+b|+C$\newline\newline
+\indent $\int{e^x}\mathrm{d}x=e^x +C$; $\int{f'(c)e^{f(x)}}\mathrm{d}x=e^{f(x)}+C$; $\int{a^x}\mathrm{d}x=\frac{a^x}{ln a}+C$\newline\newline
+\indent $\int{lnx}\mathrm{d}x=xlnx-x+C$; $\int{log_a{x}\mathrm{d}x=x{log_a{x}}-\frac{x}{lna}+C}$\newline\newline
+\indent $\int\sin{x}\mathrm{d}x=-\cos{x}+C$; $\int\cos{x}\mathrm{d}x=\sin{x}+C$; $\int\tan{x}\mathrm{d}x=-ln|\cos{x}|+C=ln|\sec{x}|+C$; $\int\cot{x}\mathrm{d}x=ln|\sin{x}|+C$\newline\newline
+\indent $\int\sec{x}\mathrm{d}x=ln|\sec{x}+\tan{x}|+C$; $\int\csc{x}\mathrm{d}x=ln|\csc{x}-\cot{x}|+C$\newline\newline
+\textbf{Trigonometric Substitutions}:\newline\newline
+\indent $\sqrt{a^2-x^2}$ substitute with $(x=a\cos{\theta})/(x=a\sin\theta)$, to get $(a\sin\theta)/(a\cos\theta)$\newline\newline
+\indent $\sqrt{a^2+x^2}$ substitute with $x=a\tan\theta$ to get $a\sec\theta$\newline\newline
+\indent $\sqrt{x^2-a^2}$ substitute with $x=a\sec\theta$ to get $a\tan\theta$\newline\newline
+\textbf{Rational Polynomials $P(x)/Q(x)$}:\newline
+\indent if degree of P $<$ degree of Q use cover up\newline\newline
+\indent\indent $\frac{x^2+2}{(x^2-1)^2(x+2)^2}=\frac{A_1x+B_1}{(x^2-1)}+\frac{A_2x+B_2}{(x^2-1)^2}+\frac{C_1}{x+2}+\frac{C_2}{(x+2)^2}$\newline\newline
+\indent if degree of P $\geq$ degree of Q use do long division first, then cover up on reminder\newline\newline
+\textbf{Integration By Parts}:\newline
+\indent $(uv)'=u'v+uv' \Rightarrow uv'=(uv)'-u'v \Rightarrow \int{uv'}\mathrm{d}x=uv-\int{u'v}\mathrm{d}x$ or $\int\limits_a^b{uv'}\mathrm{d}x=\left.{uv}\right|_a^b-\int\limits_a^b{u'v}\mathrm{d}x$\newline
+\textbf{L'Hospital's Rule}:\newline
+\indent $\lim_x \to a \frac{f(x)}{g(x)} = \lim_x \to a \frac{f'(x)}{g'(x)}$, provided that limit is is on of the indeterminate forms, and RHS limit exists\newline
+\textbf{Indeterminate forms}:\newline
+\indent $\frac{0}{0};  \frac{\infty}{\infty};  0^0;  0\cdot\infty;  \infty^0;  1^{\infty};  \infty - \infty$\newline
+\textbf{Improper Integral}:\newline
+\indent $\displaystyle \int\limits_a^\infty f(x)\mathrm{d}x = \lim_{N \to \infty} \int\limits_0^N f(x)\mathrm{d}x$; the integral converges if limit exists and diverges if not\newline
+\indent $\displaystyle \int\limits_a^\infty \frac{\mathrm{d}x}{x^p}$; diverges if $p \leq 1$ and converges if $p>1$\newline
+\textbf{Limit Comparison}:\newline
+\indent If $\displaystyle \lim_{N \to \infty}\frac{f(n)}{g(h)} = 1$ and $g(n) > 0$ then $\Sigma{f(n)}$ and $\Sigma{g(n)}$ both converge or diverge\newline
+\textbf{Ratio Test}:\newline
+\indent if $\displaystyle \lim_{N \to \infty}\frac{a_{n+1}}{a_n} = L$, the limit exists, and all $a_n >0$ then:\newline
+\indent \indent $L<1$, $\Sigma(a_N)$ converges; $L>1$, $\Sigma(a_N)$ diverges; $L=1$, $\Sigma(a_N)$ no conclusion\newline
+\section{Vectors}
+\textbf{Vector Addition:}
+\indent $\vec{A}+\vec{B} = <a_1,b_1,c_1> + <a_2,b_2,c_2> = <a_1+a_2,b_1+b_2,c_1+c_2>$ \newline
+\textbf{Vector Length:}
+\indent $|\vec{A}| = |<a,b,c>| = \sqrt{a^{2}+b^{2}+c^{2}}$ \newline
+\textbf{Dot Product}:\newline
+\indent $\vec{A} \bullet \vec{B} = \Sigma(a_{i}b_{i}c_{i})=|\vec{A}||\vec{B}|\cos\theta$ \newline
+\indent Component of $\vec{A}$ along unit $\vec{u}$ is $\vec{A} \bullet \vec{u}$ \newline
+\textbf{Determinants:} \newline
+\indent In 2D space $\det(\vec{A},\vec{B}) = a_1b_2-a_2b_1$, and it is an area of the rectangle enclosed\newline
+\indent In 3D space $\det(\vec{A},\vec{B},\vec{C}) = a_1\begin{vmatrix}b_2 & b_3 \\c_2 & c_3\end{vmatrix}-a_2\begin{vmatrix}b_1 & b_3 \\c_1 &c _3\end{vmatrix}+a_3\begin{vmatrix}b_1 & b_2 \\c_1 & c_2\end{vmatrix}$, and it is a volume of parallelepiped.\newline
+\textbf{Cross Product:}\newline
+\indent $\vec{A}\times\vec{B} = \begin{bmatrix}\hat{i} & \hat{j} & \hat{j} \\a_1 & a_2 & a_3 \\b_1 & b_2 & b_3\end{bmatrix} = \hat{i}\begin{vmatrix}a_2 & a_3 \\ b_2 & b_3\end{vmatrix} - \hat{j}\begin{vmatrix}a_1 & a_3 \\ b_1 & b_3\end{vmatrix} + \hat{k}\begin{vmatrix}a_1 & a_2\\ b_1 & b_2\end{vmatrix}$ is a vector \newline
+\indent $|\vec{A}\times\vec{B}| = |\vec{A}||\vec{B}|\sin(\theta)$ is area of parallelogram in space; $\vec{A}\times\vec{B} = -\vec{B}\times\vec{A}, \vec{A}\times\vec{A}=0$; $\det(\vec{A},\vec{B},\vec{C}) = \vec{A}\bullet(\vec{B\times\vec{C}})$
+\section{Matrices:}
+\textbf{Multiplication}\newline
+\indent $AB$ is defined only when width of $A$ equals height of $B$; $AB \neq BA$ \newline
+\textbf{Identity Matrix}
+\indent $IX=X; I_{3\times3} = \begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}$;
+\textbf{Rotation Matrix}
+\indent $R(\theta) = \begin{bmatrix}\cos\theta & -\sin\theta\\ \sin\theta & \cos\theta \end{bmatrix}$\newline
+\textbf{Inverse Matrix}\newline
+\indent $AM=I$ \& $MA=I$, $A$ needs to be a square matrix. $M = A^{-1}$\newline
+\textbf{Finding Inverse Matrix}\newline
+\indent $A^{-1}=\frac{1}{\det(A)} adj(A)$
+\indent $A = \begin{bmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{bmatrix}$ \newline
+\begin{enumerate}
+\item Find Minors: 
+$\begin{bmatrix} 
+\det\begin{bmatrix}b_2 & b_3\\ c_2 & c_3 \end{bmatrix} & \det\begin{bmatrix} b_1 & b_3 \\ c_1 & c_3\end{bmatrix} & \det\begin{bmatrix} b_1 & b_2 \\ c_1 & c_3 \end{bmatrix} \\
+\det\begin{bmatrix}a_2 & a_3\\ c_2 & c_3 \end{bmatrix} & \det\begin{bmatrix} a_1 & a_3 \\ c_1 & c_3\end{bmatrix} & \det\begin{bmatrix} a_1 & a_2 \\ c_1 & c_3 \end{bmatrix} \\
+\det\begin{bmatrix}a_2 & a_3\\b_2 & b_3 \end{bmatrix} & \det\begin{bmatrix} a_1 & a_3 \\ b_1 & b_3\end{bmatrix} & \det\begin{bmatrix} a_1 & a_2 \\ b_1 & b_3 \end{bmatrix} \\
+\end{bmatrix} = \begin{bmatrix} x_1 & x_2 & x_3\\ y_1 & y_2 & y_3\\ z_1 & z_2 & z_3\end{bmatrix}$
+\item Find Cofactors and Transpose:
+a) $\begin{bmatrix} x_1 & -x_2 & x_3\\ -y_1 & y_2 & -y_3\\ z_1 & -z_2 & z_3\end{bmatrix}$ 
+b) $\begin{bmatrix} x_1 & y_1 & z_1\\ x_2 & y_2 & z_2\\ x_3 & y_3 & z_3\end{bmatrix}$
+\item Divide by $\det(A)$
+\end{enumerate}
+\textbf{Equations of Planes}\newline
+\indent $ax+by+cz=d$ is the equation of plane, $<a,b,c> is \vec{N}$ is plane normal vector\newline
+\textbf{Linear Systems}\newline
+\indent Solution to $AX=B$ is $X=A^{-1}B$. Unique solution exists if $\det(A)!=0$. If $\det(A)=0$ then system has either no
+\indent solutions or infinitely many\newline
+\textbf{Parametric Equations of Lines $L(t)$}\newline
+\indent Point on the line is $P_{0}$ at $(x,y,z)$, and the vector along the line is $\vec{P}=<x_p,y_p,z_p>$ then $L(t)=P_{0}+t\vec{P}$ \newline
+\textbf{Position, Velocity, Speed, Acceleration, Tension Vector}\newline
+\indent $\vec{r(t)}=<x(t),y(t),z(t)>$, \
+$\vec{V}=\frac{\mathrm{d}\vec{r}}{\mathrm{d}t}=<\frac{\mathrm{d}x}{\mathrm{d}t},\frac{\mathrm{d}y}{\mathrm{d}t},\frac{\mathrm{d}z}{\mathrm{d}t}>$, \
+$\vec{a}=\frac{\mathrm{d}\vec{v}}{\mathrm{d}t}$, \
+$|\frac{\mathrm{d}s}{\mathrm{d}t}|=|\vec{v}|$,
+$\vec{T}=\frac{\vec{v}}{|\vec{v}|}$
+\section{Partial Derivatives:}
+\textbf{Definition}\newline
+\indent $\frac{\partial f}{\partial x}(x_0,y_0)=\displaystyle \lim_{\Delta x \to 0}\frac{f(x_0+\Delta{x},y_0) - f(x_0,y_0)}{\Delta{x}} = f_x$ \newline
+\indent $\frac{\partial f}{\partial y}(x_0,y_0)=\displaystyle \lim_{\Delta y \to 0}\frac{f(x_0,y_0+\Delta{y}) - f(x_0,y_0)}{\Delta{y}} = f_y$\newline
+\textbf{Approximation:}
+\indent $ z=f(x,y) \Rightarrow \Delta{z} \approx f_x\Delta{x}+f_y\Delta{y}$\newline
+\textbf{Tangent Plane to Curve at $(x_0,y_0)$:}
+\indent $z=z_0+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$\newline
+\textbf{Least-Squares Interpolation}\newline
+$\left\{ 
+  \begin{array}{l}
+	\displaystyle (\sum_{i=1}^{n}x_i^2)a+(\sum_{i=1}^{n}x_i)b = \sum_{i=1}^{n}x_iy_i \\
+	\displaystyle (\sum_{i=1}^{n}x_i)a+nb=\sum_{i=1}^{n}y_i
+  \end{array}
+\right.$ \newline
+\textbf{Critical Points:} $f(x,y) \text{ where } f_x=0;f_y=0;$ \newline
+\textbf{Second Derivative:} $\displaystyle \frac{{\partial}^2{f}}{\partial{x}\partial{y}}\equiv\partial{\frac{\partial{f}/\partial{x}}{\partial{y}}}\equiv\frac{\partial{f_x}}{\partial{y}}\equiv f_{xy}$; if second derivatives are continuous then $f_{xy}=f_{yx}$\newline
+\textbf{Second Derivative Test} \newline
+\indent At a critical point $(x_0,y_0)$ of $f$ let $A=f_{xx}(x_0,y_0)$, $B=f_{xy}(x_0,y_0)$ and $C=f_{yy}(x_0,y_0)$
+\begin{enumerate}
+\item if $AC-B^2>0$ and $A>0 \Rightarrow$ local minimum
+\item if $AC-B^2>0$ and $A<0 \Rightarrow$ local maximum
+\item if $AC-B^2<0 \Rightarrow$ saddle point
+\item if $AC-B^2=0$ cannot conclude
+\end{enumerate}
+\textbf{Quadratic Approximation:}\newline
+\indent $\Delta{f}=f_x(x-x_0)+f_y(y-y_0)+\frac{1}{2}(x-x_0)^2+f_{xy}(x-x_0)(y-y_0)+\frac{1}{2}f_{yy}(y-y_0)^2$,\newline
+\indent where $f_x,f_y=0$ at critical points,$\frac{1}{2}f_{xx}=\frac{1}{2}A=a$, $f_{xy}=B=b$, and $\frac{1}{2}f_{yy}=\frac{1}{2}C=c$\newline
+\textbf{Total Differential:} $\mathrm{d}f=f_x\mathrm{d}x+f_y\mathrm{d}y+f_z\mathrm{d}z=\frac{\partial{f}}{\partial{x}}\mathrm{d}x+\frac{\partial{f}}{\partial{y}}\mathrm{d}y+\frac{\partial{f}}{\partial{z}}\mathrm{d}z$\newline
+\textbf{Chain Rule:} $\frac{\mathrm{d}f}{\mathrm{d}t}=f_x\frac{\mathrm{d}x}{\mathrm{d}t}+f_y\frac{\mathrm{d}y}{\mathrm{d}t}+f_z\frac{\mathrm{d}z}{\mathrm{d}t}$\newline
+\textbf{Gradient:} $w=w(x,y,z)$, $x=x(t),y=y(t),z=z(t)$; $\frac{\mathrm{d}w}{\mathrm{d}t}=w_x\frac{\mathrm{d}x}{\mathrm{d}t}+w_y\frac{\mathrm{d}y}{\mathrm{d}t}+w_z\frac{\mathrm{d}z}{\mathrm{d}t}=\bigtriangledown{w}\bullet\frac{\mathrm{d}\vec{r}}{\mathrm{d}t}$ \newline
+\indent where $\bigtriangledown{w}=<w_x,w_y,w_z>$ is a gradient of $w$ at some point $(x,y,z)$, and $\frac{\mathrm{d}\vec{r}}{\mathrm{d}t}=<\frac{\mathrm{d}x}{\mathrm{d}t},\frac{\mathrm{d}y}{\mathrm{d}t},\frac{\mathrm{d}z}{\mathrm{d}t}>$\newline
+\indent $\frac{\mathrm{d}\vec{r}}{\mathrm{d}t}=\vec{V}$ is always $\bot$ to the surface \newline
+\textbf{Directional Derivative:} $\displaystyle \frac{\mathrm{d}w}{\mathrm{d}s\mid\vec{u}} = \bigtriangledown{w}\bullet\vec{u}$\newline
+\textbf{Lagrange Multipliers:} find min/max of $f(x,y)$ where $x,y,z$ are not independent, with constraint $g(x,y,z)=c$\newline
+\indent $\bigtriangledown{f}=\lambda \bigtriangledown{g} =$
+$\left\{ 
+  \begin{array}{l}
+	f_x=\lambda g_x\\
+	f_y=\lambda g_y\\
+	g = c
+  \end{array}
+\right.$, solution needs to be compared with  \newline
+\section{Double Integrals:}
+\indent $\delta$ is continuous density on the segment $[a,b]$ (units of density are mass/unit length)\newline
+For unequal masses the center of mass is a weighted average of their positions\newline
+\textbf{One Dimension}\newline
+\indent $M = \int\limits_a^b \delta(x)\mathrm{d}x$, $M$ is center of mass\newline
+\indent $x_{cm}=\frac{1}{M}\int\limits_a^b x\delta(x)\mathrm{d}x$ is weighted average of position\newline
+\textbf{Two Dimensions}\newline
+\indent $M = \int\int\limits_R \delta(x,y)\mathrm{d}A, \mathrm{d}A = \mathrm{d}x\mathrm{d}y$\newline
+\indent $x_{cm} = \frac{1}{M} \int\int\limits_R x\delta(x,y)\mathrm{d}A$\indent
+\indent $y_{cm} = \frac{1}{M} \int\int\limits_R y\delta(x,y)\mathrm{d}A$\newline
+\textbf{Average Value}\newline
+\indent Average value of $f(x,y)$ with respect to area on region $R$ is
+$\frac{1}{area R} \int\int\limits_R f(x,y)\mathrm{d}A$\newline
+\textbf{First Moment of Mass}\newline
+An object tendency to rotate about specific axis\newline
+\indent$M_{x} = \int\int\limits_R x \delta(x,y) \mathrm{d}$\indent$M_{y} = \int\int\limits_R y \delta(x,y) \mathrm{d}$\newline
+\textbf{Moment of Inertia}\newline
+\indent $\mathrm{d}I = r^2\mathrm{d}$, $I = \int\int\limits_R r^2 \mathrm{d}M$\newline
+\textbf{Change of Variables}\newline
+\indent\textbf{Rectangular to Polar}\newline
+\indent\indent $\int\int\limits_R f(x,y)\mathrm{d}A = \int\int\limits_R g(r,\theta)r\mathrm{d}\theta; r=\sqrt[•]{x^2+y^2}, \theta=\tan^{-1}(y/x), x=r\cos(\theta), y=r\sin(\theta)$\newline
+\indent\textbf{Rectangular to Other}\newline
+\indent\indent Make substitutions in $u,v$ coordinates: $u = u(x,y), v = v(x,y), x = x(u,v), y = y(u,v)$\newline
+\indent\indent Compute Jacobian: $\frac{\partial{(x,y)}}{\partial{(u,v)}} = \abs*{\det\begin{bmatrix} x_u & x_v\\ y_u & y_v\end{bmatrix}}$\newline
+\indent\indent Substitute: $\int\int\limits_R f(x,y)\mathrm{d}x\mathrm{d}y = \int\int\limits_R g(u,v) \abs*{\frac{\partial{(x,y)}}{\partial{(u,v)}}}\mathrm{d}u\mathrm{d}v$
+\section{Vector Fields}
+\indent
+\indent\textbf{Def:} Vector field is a function that assigns a vector to every point in space or region\newline
+\indent\indent $\vec{F} = M\hat{i} + N\hat{j}$, $M,N$ are functions of $x,y$\newline
+\indent
+\textbf{Work} Work is the amount of energy needed to move an object from point A to point B.\newline
+\indent\indent\indent Work done by the vector field is the line integral\newline
+\indent\indent $W = Force * Distance = \vec{F}\vec{\Delta{r}}$\newline
+\indent \textbf{Work over any trajectory is}\newline
+\begin{enumerate}
+\item
+$W=\int\limits_C \vec{F}\mathrm{d}\vec{r}=\int\limits_{t_{1}}^{t_{2}}\vec{F}\frac{\mathrm{d}\vec{r}}{\mathrm{d}t}\mathrm{d}t; \frac{\mathrm{d}\vec{r}}{\mathrm{d}t} = <\frac{\mathrm{d}x}{\mathrm{d}t},\frac{\mathrm{d}y}{\mathrm{d}t}>$, where t is parameter
+\item
+$\vec{F} = <M,N>, \mathrm{d}\vec{r} = <\mathrm{d}x,\mathrm{d}y>; \vec{F} \bullet \mathrm{\vec{r}} = M\mathrm{d}x + N\mathrm{d}y$\newline\newline
+$\int\limits_C \vec{F}\mathrm{d}\vec{r} = \int\limits_C M\mathrm{d}x + N\mathrm{d}y$; to integrate express x,y in terms of a single variable \& substitute
+\end{enumerate}
+\indent\indent
+\textbf{Geometric Approach}\newline\newline
+\indent\indent
+$\mathrm{d}\vec{r} = <\mathrm{d}x,\mathrm{d}y> = \hat{T}\mathrm{d}s;\indent \frac{\mathrm{d}\vec{r}}{\mathrm{d}t} = <\frac{\mathrm{d}x}{\mathrm{d}t},\frac{\mathrm{d}y}{\mathrm{d}t}> = \hat{T}\frac{\mathrm{d}s}{\mathrm{d}t}$\newline\newline
+\indent\indent
+$\int\limits_C \vec{F}\mathrm{d}\vec{r} = \int\limits_C M\mathrm{d}x + N\mathrm{d}y = \int\limits_C \vec{F} \bullet \hat{T} \mathrm{d}s$\newline\newline
+\indent
+\textbf{Fundamental Theorem of Calculus for Line Intergrals}\newline\newline
+\indent\indent
+$\int\limits_C \bigtriangledown f \bullet \mathrm{d}\vec{r}= f(P_{1})-f(P_{0})$\newline\newline
+\indent
+\textbf{Conservative Field}\newline\newline
+\indent\indent
+$\vec{F} = \bigtriangledown f$, then along closed curve $C \int\limits_C \vec{F} \bullet \mathrm{d}\vec{r} = 0$\newline\newline
+\indent
+\textbf{Gradien Field}\newline\newline
+\indent\indent
+$\vec{F} = \bigtriangledown f; \bigtriangledown f = <f_{x},f_{y}> = <M,N>$ then $f_{xy}=f_{yx} \implies M_{y}=N_{x}$\newline
+\indent\indent
+$\vec{F}=<M,N>$ is gradient $\iff$ , $M_{y}=N_{x}$ and $\vec{F}$ is defined in entire plane or simply connected region\newline
+\indent\indent
+$\vec{F} = <M,N>$ is a gradient field $\iff \int\limits_C\vec{F}\bullet\mathrm{d}\vec{r} = 0$, for closed C\newline
+\indent\indent
+$M\mathrm{d}x+N\mathrm{d}y$ is exact differential $\iff \vec{F}=M\hat{i}+N\hat{j}$ is a gradient field\newline
+\indent
+\textbf{Curl}\newline
+\indent\indent
+$curl(\vec{F}) = N_{x}-M_{y}$\newline
+\indent
+\textbf{Green's Theorem (tangenial form)}\newline
+\indent\indent
+If $C$ is a closed curve enclosing a region R, counterclockwise, and $\vec{F}$ is a vector field defined and differentiable in R,\newline
+\indent\indent then: $\int\limits_C \vec{F} \bullet \mathrm{d}\vec{r} = \int\int\limits_R curl(\vec{F}) \mathrm{d}A$; or in rect coordinates $\int\limits_C M\mathrm{d}x + N\mathrm{d}y = \int\int\limits_R(N_{x}-M_{y})\mathrm{d}A$\newline
+\indent\indent
+If $curl(\vec{F}) = 0$ everywhere in R, then $\int\limits_C \vec{F} \mathrm{d}\vec{r} = 0$, the field is conservative\newline\newline
+\indent
+\textbf{Green Theorem Area}\newline
+\indent\indent
+Area A of enclosed region $R$ is $\int\int\limits_R \mathrm{d}A = \int\limits_C -y\mathrm{d}x +x\mathrm{d}y$, parameterize using curve outlining $R$\newline\newline
+\indent
+\textbf{Flux}\newline
+\indent\indent
+Flux of $\vec{F}$ across $C$ is $\int\limits_C \vec{F} \bullet \hat{n} \mathrm{d}s$, where $\hat{n}$ is a normal vector to $C,\ang{90}$ clockwise from $\hat{T}$ \newline
+\indent\indent
+So if $\vec{F} = <P,Q> then \int\limits_C \vec{F} \bullet \hat{n} \mathrm{d}s = \int\limits_C <P,Q> \bullet <\mathrm{d}y,-\mathrm{d}x> = \int\limits_C -Q\mathrm{d}x + P\mathrm{d}y$\newline\newline
+\indent
+\textbf{Green's Theorem for Flux (normal form)}\newline
+\indent\indent
+If $C$ encloses region $R$ counter clockwise, and $\vec{F}$ is defined and differentiable in $R$ then $\int\limits_C \vec{F} \bullet \vec{n} \mathrm{d}s = \int\int\limits_R div(\vec{F})\mathrm{d}A$\newline
+\indent\indent
+Divergence is $div(\vec{F}) = dvv(<P,Q>) = P_{x} + Q_{y}$\newline\newline
+\indent
+\textbf{Definition and Summary of Gradient/Conservative Fields}\newline
+\indent\indent
+A connected region $R$ in the plane is simply connected if any closed curve in $R$ is also contained in $R$.\newline
+\indent\indent
+If domain where $\vec{F}$ is defined and differentiable is simply connected then we can apply Green's theorem\newline
+\indent\indent
+If $curl(\vec{F}) = 0$ and domain where $\vec{F}$ is defined is simply connected, then $\vec{F}$ is conservative and gradient\newline
+\end{document}
