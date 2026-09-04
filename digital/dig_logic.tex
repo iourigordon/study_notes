@@ -1,0 +1,505 @@
+\documentclass[twoside]{article}
+\usepackage[cm]{fullpage}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{circuits.logic.US}
+\usetikzlibrary{positioning}
+
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{circuitikz}
+\usepackage{enumitem}  
+
+\definecolor{GateFill}{HTML}{FFC90E}
+
+\begin{document}
+\section {Single Variable Theorems}
+\indent
+\begin{minipage}[t]{0.25\textwidth}\vspace{0pt}
+\centering
+\begin{circuitikz}
+	\draw
+		(0,0)
+		node[and port,fill=GateFill] (gate) {}
+		(gate.in 1)
+		to[short, -*] ++(-.5,0)
+		node[label=left:$x$] {}
+		(gate.in 2)
+		to[short, -*] ++(-.5,0)
+		node[label=left:$0$] {}
+		(gate.out)
+		to[short,-*] ++(.5,0)
+		node[label=right:$0$] {}
+		;
+\end{circuitikz}
+\captionof*{figure}{$x \cdot 0 = 0$}
+\end{minipage}
+%
+\begin{minipage}[t]{0.25\textwidth}\vspace{0pt}
+\centering
+\begin{circuitikz}
+	\draw
+		(0,0)
+		node[and port,fill=GateFill] (gate) {}
+		(gate.in 1)
+		to[short, -*] ++(-.5,0)
+		node[label=left:$x$] {}
+		(gate.in 2)
+		to[short, -*] ++(-.5,0)
+		node[label=left:$1$] {}
+		(gate.out)
+		to[short,-*] ++(.5,0)
+		node[label=right:$x$] {}
+		;
+\end{circuitikz}
+\captionof*{figure}{$x \cdot 1 = x$}
+\end{minipage}
+%
+\begin{minipage}[t]{0.25\textwidth}\vspace{0pt}
+\centering
+\begin{circuitikz}
+	\draw
+		(0,0)
+		node[and port, anchor=in 1, ,fill=GateFill] (gate) {}
+		(gate.in 1)
+		to[short, -*] ++(-1,0)
+		node[label=left:$x$] {}
+		(gate.in 2)
+		-- ++(-0.5,0)
+		to[short, -*] (-0.5,0)
+		(gate.out)
+		to[short, -*] ++(.5,0)
+		node[label=right:$x$] {}	
+		;
+\end{circuitikz}
+\captionof*{figure}{$x \cdot x = x$}
+\end{minipage}
+%
+\begin{minipage}[t]{0.25\textwidth}\vspace{0pt}
+\centering
+\begin{circuitikz}
+	\draw
+		(0,0)
+		node[and port, anchor=in 1, fill=GateFill] (gate) {}
+		(gate.in 1)
+		to[short, -*] ++(-1,0)
+		node[label=left:$x$] {}
+		(gate.in 2)
+		-- ++(-0.3,0)
+		node[not port,scale=0.4, fill=GateFill] (inverse) {}
+		(inverse.in)
+		to[short, -*] (-0.6,0)
+		(gate.out)
+		to[short, -*] ++(.5,0)
+		node[label=right:$0$] {}	
+		;
+\end{circuitikz}
+\captionof*{figure}{$x \cdot \overline{x} = 0$}
+\end{minipage}
+
+\hfill
+
+\noindent
+\begin{minipage}[t]{0.25\textwidth}\vspace{0pt}
+\centering
+\begin{circuitikz}
+	\draw
+		(0,0)
+		node[or port,fill=GateFill] (gate) {}
+		(gate.in 1)
+		to[short, -*] ++(-.5,0)
+		node[label=left:$x$] {}
+		(gate.in 2)
+		to[short, -*] ++(-.5,0)
+		node[label=left:$0$] {}
+		(gate.out)
+		to[short,-*] ++(.5,0)
+		node[label=right:$x$] {}
+		;
+\end{circuitikz}
+\captionof*{figure}{$x + 0 = x$}
+\end{minipage}
+%
+\begin{minipage}[t]{0.25\textwidth}\vspace{0pt}
+\centering
+\begin{circuitikz}
+	\draw
+		(0,0)
+		node[or port,fill=GateFill] (gate) {}
+		(gate.in 1)
+		to[short, -*] ++(-.5,0)
+		node[label=left:$x$] {}
+		(gate.in 2)
+		to[short, -*] ++(-.5,0)
+		node[label=left:$1$] {}
+		(gate.out)
+		to[short,-*] ++(.5,0)
+		node[label=right:$1$] {}
+		;
+\end{circuitikz}
+\captionof*{figure}{$x + 1 = 1$}
+\end{minipage}
+%
+\begin{minipage}[t]{0.25\textwidth}\vspace{0pt}
+\centering
+\begin{circuitikz}
+	\draw
+		(0,0)
+		node[or port, anchor=in 1, ,fill=GateFill] (gate) {}
+		(gate.in 1)
+		to[short, -*] ++(-1,0)
+		node[label=left:$x$] {}
+		(gate.in 2)
+		-- ++(-0.5,0)
+		to[short, -*] (-0.5,0)
+		(gate.out)
+		to[short, -*] ++(.5,0)
+		node[label=right:$x$] {}	
+		;
+\end{circuitikz}
+\captionof*{figure}{$x + x = x$}
+\end{minipage}
+%
+\begin{minipage}[t]{0.25\textwidth}\vspace{0pt}
+\centering
+\begin{circuitikz}
+	\draw
+		(0,0)
+		node[or port, anchor=in 1, fill=GateFill] (gate) {}
+		(gate.in 1)
+		to[short, -*] ++(-1,0)
+		node[label=left:$x$] {}
+		(gate.in 2)
+		-- ++(-0.3,0)
+		node[not port,scale=0.4, fill=GateFill] (inverse) {}
+		(inverse.in)
+		to[short, -*] (-0.6,0)
+		(gate.out)
+		to[short, -*] ++(.5,0)
+		node[label=right:$1$] {}	
+		;
+\end{circuitikz}
+\captionof*{figure}{$x + \overline{x} = 1$}
+\end{minipage}
+
+\section {Multivariable Theorems}
+
+	\begin{enumerate}[label=(\alph*)]
+		\item $x+y=y+x$
+		\item $x \cdot y = y \cdot x$
+		\item $x + (y + z) = (x + y) + z = x + y + z$
+		\item $x(yz) = (xy)z = xyz$
+		\item $x(y + z) = xy + xz$
+		\item $(w + x)(y + z) = wy + xy + wz + xz$
+		\item $x + xy = x$
+		\item $x + \overline{x}y = x + y$
+		\item $\overline{x} + xy = \overline{x} + y$
+	\end{enumerate}
+
+\section {DeMorgan Theorems}
+
+	\begin{enumerate}[label=(\alph*)]
+		\item $(\overline{x+y}) = \overline{x} \cdot \overline{y}$
+		\item $(\overline{x \cdot y}) = \overline{x} + \overline{y}$
+	\end{enumerate}
+
+\section {NAND Gates}
+	\begin{minipage}[t][2cm]{0.5\textwidth}\vspace{0pt}
+	\centering
+		\begin{circuitikz}
+		\draw
+			(0,0)
+			node[nand port, scale=0.8, anchor=in 1, fill=GateFill] (gate) {}
+			(gate.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$A$] {}
+			(gate.in 2)
+			-- ++(-0.5,0)
+			to[short, -*] (-0.5,0)
+			(gate.out)
+			to[short, -*] ++(.5,0)
+			node[label=right:$\overline{A}$] {}	
+			;
+		\end{circuitikz}%
+	$\Longrightarrow$%
+	\begin{circuitikz}
+		\draw
+			(0,0)
+			node[not port, scale=0.8,anchor=in 1, fill=GateFill] (invert) {}
+			(invert.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$A$]{}
+			(invert.out)
+			to[short, -*] ++(.5,0)
+			node[label=right:$\overline{A}$] {}
+			;
+	\end{circuitikz}%
+	\captionof*{figure}{$x = \overline{A \cdot A} = \overline{A}$}
+	\end{minipage}
+
+	\begin{minipage}[t][2cm]{0.5\textwidth}\vspace{0pt}
+	\centering
+		\begin{circuitikz}
+		\draw
+			(0,0)
+			node[nand port, scale=0.8, anchor=in 1, fill=GateFill] (gate) {}
+
+			(gate.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$A$] {}
+
+			(gate.in 2)
+			to[short, -*] ++(-1,0)
+			node[label=left:$B$] {}
+
+			(gate.out)
+			to[short, -*] ++(0.5,0) coordinate(gate_out)
+			(2.5,0)
+			node[nand port, scale=0.8, anchor=in 1, fill=GateFill] (gate_1) {}
+
+			(gate_1.in 1)
+			to[short, -] ++(-0.5,0) coordinate(gate_1_in_1)
+			(gate_1.in 2)
+			to[short, -] ++(-0.5,0) coordinate(gate_1_in_2)
+		
+			(gate_out) |- (gate_1_in_1)
+			(gate_out) |- (gate_1_in_2)
+			(gate_1.out)
+			to[short, -*] ++(0.5,0)
+			;
+		\end{circuitikz}%
+		$\Longrightarrow$%
+		\begin{circuitikz}
+		\draw
+			(0,0)
+			node[and port, scale=0.8,anchor=in 1, fill=GateFill] (gate) {}
+			(gate.in 1)
+			to[short, -*] ++(-0.5,0)
+			node[label=left:$A$] {}
+			(gate.in 2)
+			to[short, -*] ++(-0.5,0)
+			node[label=left:$B$] {}
+			(gate.out)
+			to[short, -*] ++(.5,0)
+			node[label=right:$A \cdot B$] {}
+			;
+		\end{circuitikz}%
+		\captionof*{figure}{$\overline{\overline{A \cdot B}} = A \cdot B$}
+	\end{minipage}
+
+	\begin{minipage}[t][2cm]{0.5\textwidth}\vspace{0pt}
+	\centering
+		\begin{circuitikz}
+		\draw
+			(0,0)
+			node[nand port, scale=0.8, anchor=in 1, fill=GateFill] (gate_1) {}
+
+			(gate_1.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$A$] {}
+
+			(gate_1.in 2)
+			-- ++(-0.5,0)
+			to[short, -*] (-0.5,0)
+
+			(gate_1.out)
+			to[short, -*] ++(0.5,0) coordinate(gate_1_out)
+		
+			(0,1)		
+			node[nand port, scale=0.8, anchor=in 1, fill=GateFill] (gate_2) {}
+
+			(gate_2.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$B$] {}
+
+			(gate_2.in 2)
+			-- ++(-0.5,0)
+			to[short, -*] (-0.5,1)
+
+			(gate_2.out)
+			to[short, -*] ++(0.5,0) coordinate(gate_2_out)
+				
+			(2.5,0.5)
+			node[nand port, scale=0.8, anchor=in 1, fill=GateFill] (gate) {}
+
+			%(gate.in 1)
+			%to[short, -] ++(-0.5,0) coordinate(gate_in_1)
+			%(gate.in 2)
+			%to[short, -] ++(-0.5,0) coordinate(gate_in_2)
+		
+			(gate_1_out) |- (gate.in 2)
+			(gate_2_out) |- (gate.in 1)
+			(gate.out)
+			to[short, -*] ++(0.5,0)
+			;
+		\end{circuitikz}%
+		$\Longrightarrow$%
+		\begin{circuitikz}
+		\draw
+			(0,-1.2)
+			node[or port, scale=0.8, anchor=in 1, fill=GateFill] (gate) at (0,0){}
+			(gate.in 1)
+			to[short, -*] ++(-.5,0)
+			node[label=left:$A$] {}
+			(gate.in 2)
+			to[short, -*] ++(-.5,0)
+			node[label=left:$B$] {}
+			(gate.out)
+			to[short, -*] ++(0.5,0)
+			node[label=right:$A + B$] {}
+			;
+		\end{circuitikz}%
+		\captionof*{figure}{$\overline{\overline{A} \cdot \overline{B}} = A + B$}
+	\end{minipage}
+	
+\newpage
+\section {NOR Gates}
+	\begin{minipage}[t][2cm]{0.5\textwidth}\vspace{0pt}
+	\centering
+		\begin{circuitikz}
+		\draw
+			(0,0)
+			node[nor port, scale=0.8, anchor=in 1, fill=GateFill] (gate) {}
+			(gate.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$A$] {}
+			(gate.in 2)
+			-- ++(-0.5,0)
+			to[short, -*] (-0.5,0)
+			(gate.out)
+			to[short, -*] ++(.5,0)
+			node[label=right:$\overline{A}$] {}	
+			;
+		\end{circuitikz}%
+	$\Longrightarrow$%
+	\begin{circuitikz}
+		\draw
+			(0,0)
+			node[not port, scale=0.8,anchor=in 1, fill=GateFill] (invert) {}
+			(invert.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$A$]{}
+			(invert.out)
+			to[short, -*] ++(.5,0)
+			node[label=right:$\overline{A}$] {}
+			;
+	\end{circuitikz}%
+	\captionof*{figure}{$x = \overline{A + A} = \overline{A}$}
+	\end{minipage}
+	
+	\begin{minipage}[t][2cm]{0.5\textwidth}\vspace{0pt}
+	\centering
+		\begin{circuitikz}
+		\draw
+			(0,0)
+			node[nor port, scale=0.8, anchor=in 1, fill=GateFill] (gate) {}
+
+			(gate.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$A$] {}
+
+			(gate.in 2)
+			to[short, -*] ++(-1,0)
+			node[label=left:$B$] {}
+
+			(gate.out)
+			to[short, -*] ++(0.5,0) coordinate(gate_out)
+			(2.5,0)
+			node[nor port, scale=0.8, anchor=in 1, fill=GateFill] (gate_1) {}
+
+			(gate_1.in 1)
+			to[short, -] ++(-0.5,0) coordinate(gate_1_in_1)
+			(gate_1.in 2)
+			to[short, -] ++(-0.5,0) coordinate(gate_1_in_2)
+		
+			(gate_out) |- (gate_1_in_1)
+			(gate_out) |- (gate_1_in_2)
+			(gate_1.out)
+			to[short, -*] ++(0.5,0)
+			;
+		\end{circuitikz}%
+		$\Longrightarrow$%
+		\begin{circuitikz}
+		\draw
+			(0,0)
+			node[or port, scale=0.8,anchor=in 1, fill=GateFill] (gate) {}
+			(gate.in 1)
+			to[short, -*] ++(-0.5,0)
+			node[label=left:$A$] {}
+			(gate.in 2)
+			to[short, -*] ++(-0.5,0)
+			node[label=left:$B$] {}
+			(gate.out)
+			to[short, -*] ++(.5,0)
+			node[label=right:$A \cdot B$] {}
+			;
+		\end{circuitikz}%
+		\captionof*{figure}{$\overline{\overline{A + B}} = A + B$}
+	\end{minipage}
+	
+	\begin{minipage}[t][2cm]{0.5\textwidth}\vspace{0pt}
+	\centering
+		\begin{circuitikz}
+		\draw
+			(0,0)
+			node[nor port, scale=0.8, anchor=in 1, fill=GateFill] (gate_1) {}
+
+			(gate_1.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$A$] {}
+
+			(gate_1.in 2)
+			-- ++(-0.5,0)
+			to[short, -*] (-0.5,0)
+
+			(gate_1.out)
+			to[short, -*] ++(0.5,0) coordinate(gate_1_out)
+		
+			(0,1)		
+			node[nor port, scale=0.8, anchor=in 1, fill=GateFill] (gate_2) {}
+
+			(gate_2.in 1)
+			to[short, -*] ++(-1,0)
+			node[label=left:$B$] {}
+
+			(gate_2.in 2)
+			-- ++(-0.5,0)
+			to[short, -*] (-0.5,1)
+
+			(gate_2.out)
+			to[short, -*] ++(0.5,0) coordinate(gate_2_out)
+				
+			(2.5,0.5)
+			node[nor port, scale=0.8, anchor=in 1, fill=GateFill] (gate) {}
+
+			%(gate.in 1)
+			%to[short, -] ++(-0.5,0) coordinate(gate_in_1)
+			%(gate.in 2)
+			%to[short, -] ++(-0.5,0) coordinate(gate_in_2)
+		
+			(gate_1_out) |- (gate.in 2)
+			(gate_2_out) |- (gate.in 1)
+			(gate.out)
+			to[short, -*] ++(0.5,0)
+			;
+		\end{circuitikz}%
+		$\Longrightarrow$%
+		\begin{circuitikz}
+		\draw
+			(0,-1.2)
+			node[and port, scale=0.8, anchor=in 1, fill=GateFill] (gate) at (0,0){}
+			(gate.in 1)
+			to[short, -*] ++(-.5,0)
+			node[label=left:$A$] {}
+			(gate.in 2)
+			to[short, -*] ++(-.5,0)
+			node[label=left:$B$] {}
+			(gate.out)
+			to[short, -*] ++(0.5,0)
+			node[label=right:$A \cdot B$] {}
+			;
+		\end{circuitikz}%
+		\captionof*{figure}{$\overline{\overline{A} + \overline{B}} = A \cdot B$}
+	\end{minipage}	
+\end{document}
