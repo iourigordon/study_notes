@@ -181,7 +181,7 @@ $\left\{
 	g = c
   \end{array}
 \right.$, solution needs to be compared with  \newline
-\section{Double Integrals:}
+\section{Double Integrals}
 \indent $\delta$ is continuous density on the segment $[a,b]$ (units of density are mass/unit length)\newline
 For unequal masses the center of mass is a weighted average of their positions\newline
 \textbf{One Dimension}\newline
@@ -202,10 +202,13 @@ An object tendency to rotate about specific axis\newline
 \textbf{Change of Variables}\newline
 \indent\textbf{Rectangular to Polar}\newline
 \indent\indent $\int\int\limits_R f(x,y)\mathrm{d}A = \int\int\limits_R g(r,\theta)r\mathrm{d}\theta; r=\sqrt[•]{x^2+y^2}, \theta=\tan^{-1}(y/x), x=r\cos(\theta), y=r\sin(\theta)$\newline
-\indent\textbf{Rectangular to Other}\newline
+\indent\textbf{Rectangular to Other (Jacobian)}\newline
 \indent\indent Make substitutions in $u,v$ coordinates: $u = u(x,y), v = v(x,y), x = x(u,v), y = y(u,v)$\newline
 \indent\indent Compute Jacobian: $\frac{\partial{(x,y)}}{\partial{(u,v)}} = \abs*{\det\begin{bmatrix} x_u & x_v\\ y_u & y_v\end{bmatrix}}$\newline
-\indent\indent Substitute: $\int\int\limits_R f(x,y)\mathrm{d}x\mathrm{d}y = \int\int\limits_R g(u,v) \abs*{\frac{\partial{(x,y)}}{\partial{(u,v)}}}\mathrm{d}u\mathrm{d}v$
+\indent\indent Substitute: $\int\int\limits_R f(x,y)\mathrm{d}x\mathrm{d}y = \int\int\limits_R g(u,v) \abs*{\frac{\partial{(x,y)}}{\partial{(u,v)}}}\mathrm{d}u\mathrm{d}v$\newline
+\indent\textbf{Another Jacobian}\newline
+\indent\indent $\frac{\partial{(u,v)}}{\partial{(x,y)}} = \abs*{\det\begin{bmatrix} u_x & u_y\\ v_x & v_y\end{bmatrix}}$, and $\frac{\partial{(u,v)}}{\partial{(x,y)}} \frac{\partial{(x,y)}}{\partial{(u,v)}} = 1 \implies \frac{\partial{(x,y)}}{\partial{(u,v)}} = \frac{1}{\frac{\partial{(u,v)}}{\partial{(x,y)}}} $
+
 \section{Vector Fields}
 \indent
 \indent\textbf{Def:} Vector field is a function that assigns a vector to every point in space or region\newline
@@ -281,4 +284,36 @@ A connected region $R$ in the plane is simply connected if any closed curve in $
 If domain where $\vec{F}$ is defined and differentiable is simply connected then we can apply Green's theorem\newline
 \indent\indent
 If $curl(\vec{F}) = 0$ and domain where $\vec{F}$ is defined is simply connected, then $\vec{F}$ is conservative and gradient\newline
+\section{Triple Integrals}
+\indent\indent
+\textbf{Cylindrical Coordinates}\newline
+\indent\indent
+1. Hold $x,y$ fixed, and let $z$ increase\newline
+\indent\indent
+2. Integrate from $z-value$ where the vertical line enters the region to the $z-value$ where it leaves the region\newline
+\indent\indent
+3. Supply remaining limits (in either $x,y$ coordinates or polar coordinates)\newline
+\indent
+\textbf{Spherical Coordinates}\newline
+\indent\indent
+$\rho$ distance to origin, $\rho \geq 0$\newline
+\indent\indent
+$\phi$ angle to $z-axis$, $0 \leq \phi \leq \pi$\newline
+\indent\indent
+$\theta$ angle of projection to xy-plane with $x-axis, 0 \leq \theta \leq 2\pi$\newline\newline
+\indent\indent
+$z = \rho\cos\phi$, $x = \rho\sin\phi cos\theta$, $y = \rho\sin\phi \sin\theta$\newline
+\indent\indent
+$\mathrm{d}V = \rho^2\sin\phi$  $\mathrm{d}\rho$ $\mathrm{d}\phi$ $\mathrm{d}\theta$\newline\newline
+\indent\indent
+1. Hold $\phi$ and $\theta$ fixed and $\rho$ increase\newline
+\indent\indent
+2. Integrate from the $\rho-value$ where it enters the region to the $\rho-value$ where it leaves the region\newline
+\indent\indent
+3. Hole $\theta$ fixed, and let $\phi$ increase\newline
+\indent\indent
+4. Supply limits on $\theta$\newline\newline
+\textbf{General Formula for Average}\newline
+\indent\indent
+$avg(f) = \frac{1}{V} \int\int\int\limits_R f(x,y,z)\mathrm{d}V$\newline
 \end{document}
