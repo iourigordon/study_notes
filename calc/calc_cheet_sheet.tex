@@ -320,5 +320,30 @@ $avg(f) = \frac{1}{V} \int\int\int\limits_R f(x,y,z)\mathrm{d}V$\newline
 \indent
 \textbf{Gravitational Attraction}\newline
 \indent\indent
-$\vec{F} = \int\int\int \frac{Gm<x,y,z>}{\rho^3} \delta \mathrm{d}V$
+$\vec{F} = \int\int\int \frac{Gm<x,y,z>}{\rho^3} \delta \mathrm{d}V$\newline
+\indent
+\textbf{Flux in 3D}\newline
+\indent\indent
+$Flux = \int\int\limits_S \vec{F} \cdot \hat{n} \mathrm{d}S$\indent   Notation: $\mathrm{d}\vec{S} = \hat{n}\mathrm{d}S$\newline
+\indent\indent
+Sphere of radius $a$ at origin:\newline
+\indent\indent\indent
+$\hat{n} = \frac{<x,y,z>}{a}$\newline
+\indent\indent\indent
+$\mathrm{d}S = a^2 sin\phi \mathrm{d}\phi \mathrm{d}\theta$\newline
+\indent\indent
+Graph $z = f(x,y)$:\newline
+\indent\indent\indent
+$\hat{n}\mathrm{d}S =  <-f_x, -f_y, 1> \mathrm{d}x \mathrm{d}y$\newline
+\indent
+\textbf{Divergence Theorem (Gauss-Green}\newline
+\indent\indent
+If $S$ is a closed surface enclosing a region $D$, oriented with $\hat{n}$ outwards, and $\vec{F}$ is defined and differentiable\newline
+\indent\indent
+everywhere in $D$, then \newline\newline
+\indent\indent
+$\int\int\limits_S \vec{F}\mathrm{d}\vec{S} = \int\int\int\limits_D div(\vec{F}) \mathrm{d}V$; where $div(P\hat{i}+Q\hat{j}+R\hat{k}) = P_x + Q_y + R_z$\newline
+
+
+
 \end{document}
